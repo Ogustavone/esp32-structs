@@ -29,5 +29,18 @@ void setup() {
 
 // Função loop - Arduino
 void loop() {
+  Serial.println("Ligando todos os leds sequencialmente");
+  for (int i = 0; i < 4; i++) {
+    digitalWrite(leds[i].pin, HIGH);
+    delay(200);
+  };
 
-}
+  Serial.println("Desligando todos os leds");
+  for (int i = 0; i < 4; i++) {
+    digitalWrite(leds[i].pin, LOW);
+    delay(200);
+  };
+
+  // Delay 1 segundo entre os loops
+  delay(1000);
+};
